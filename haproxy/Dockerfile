@@ -30,7 +30,7 @@ RUN sed -i 's/^ENABLED=.*/ENABLED=1/' /etc/default/haproxy
 
 # Install Openstack nova command line tool
 
-RUN apt-get install -y python-novaclient
+RUN apt-get install -y python-novaclient nova-common
 RUN rm -rf /var/lib/apt/lists/* 
 
 # Define mountable directories
