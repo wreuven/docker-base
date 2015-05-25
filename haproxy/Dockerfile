@@ -19,6 +19,8 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" >> /etc/ap
 RUN apt-get update
 RUN apt-get install -y haproxy=1.5.3-1~ubuntu14.04.1 keepalived
 
+# Tell kernel to allow binding non-local IP addresses into the hosts and apply the change
+
 RUN echo "net.ipv4.ip_nonlocal_bind = 1" >> /etc/sysctl.conf
 RUN sysctl -p
 
