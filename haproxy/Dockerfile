@@ -17,7 +17,7 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" >> /etc/ap
 # Install Haproxy.
 
 RUN apt-get update
-RUN apt-get install -y haproxy=1.5.3-1~ubuntu14.04.1
+RUN apt-get install -y haproxy=1.5.3-1~ubuntu14.04.1 keepalived
 
 # We will ensure a sane CFG (in child Dockerfile) so let's enable HAPROXY by default
 
