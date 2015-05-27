@@ -21,8 +21,9 @@ RUN apt-get install -y haproxy=1.5.3-1~ubuntu14.04.1 keepalived
 
 # Tell kernel to allow binding non-local IP addresses into the hosts and apply the change
 
-RUN echo "net.ipv4.ip_nonlocal_bind = 1" >> /etc/sysctl.conf
-RUN sysctl -p
+# not possible in docker... is it enough if we enable in the host?
+#RUN echo "net.ipv4.ip_nonlocal_bind = 1" >> /etc/sysctl.conf
+#RUN sysctl -p
 
 # We will ensure a sane CFG (in child Dockerfile) so let's enable HAPROXY by default
 
